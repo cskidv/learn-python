@@ -1,19 +1,29 @@
 import random
+
 command = ''
-while command<>'[exit]':
-    command=raw_input("enter command:")
-    if command=='[say]':
-        store_say=raw_input("say what?:")
-        print(store_say)
-    elif command=='[rand]':
-        x=raw_input("from where?:")
-        y=raw_input("to where?:")
-        while int(y)<int(x):
-            y=raw_input("y need to be bigger than {}, re-enter to where?:".format(x))
-            
-        r = random.randint(int(x),int(y))
-        print("random number is: {}".format(r))
-    elif command=='[exit]':
+while command != '[exit]':
+    command = raw_input("enter command:")
+    if command == '[say]':
+        message = raw_input("say what?:")
+        print(message)
+        
+    elif command == '[rand]':
+        x = int(raw_input("from where?:"))
+        y = int(raw_input("to where?:"))
+        while y < x:
+            y = int(raw_input(
+                "error! needs to be bigger than {}. try again:".format(x))
+            )           
+        r = random.randint(x, y)
+        print("{}".format(r))
+        
+    elif command == '[add]':
+        x = int(raw_input("add what?"))
+        y = int(raw_input("to what?"))
+        print(x + y)
+        
+    elif command == '[exit]':
         print('exiting...')
+        
     else:
-        print("unknown command! try [say], [rand], or [exit]")   
+        print("unknown command!")  
