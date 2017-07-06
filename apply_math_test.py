@@ -5,8 +5,8 @@ stop = False
 while not stop:
     x = random.randint(1,1000)
     y = random.randint(1,1000)
-    a=int(raw_input("how much is {}+{}?:".format(x,y)))
-    if a==x+y:
+    answer=int(raw_input("how much is {}+{}?:".format(x,y)))
+    if answer==x+y:
         print('correct, congratulations!')
         correct = correct + 1
     else:
