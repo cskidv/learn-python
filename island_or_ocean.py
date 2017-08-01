@@ -46,17 +46,18 @@ def main():
 
     filename = '/Users/vidu/data/island.txt'
     my_map = read_data(filename)
-    marked = np.zeros(my_map.shape, dtype=np.int)
-    
-    x = int(raw_input('input row number:'))-1
-    y = int(raw_input('input column number:'))-1
-    if my_map[x, y] == 0:
-        print('ocean!')
-    else:
-        if is_land(my_map, marked, x, y):
-            print('land')
+    while 1:
+        marked = np.zeros(my_map.shape, dtype=np.int)
+        
+        x = int(raw_input('input row number:'))-1
+        y = int(raw_input('input column number:'))-1
+        if my_map[x, y] == 0:
+            print('ocean!')
         else:
-            print('island')
+            if is_land(my_map, marked, x, y):
+                print('land')
+            else:
+                print('island')
 
 if __name__ == "__main__":
     main()
